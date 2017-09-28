@@ -50,6 +50,9 @@ def address_exporter(_ip_geo):
 print(ip_geo.export(address_exporter))
 ```  
 
+### Todos 
+ - [ ] Use mock instead file load in tests.py
+
 ### License  
 [MIT license](https://opensource.org/licenses/MIT)  
 ### Acknowledgment  
