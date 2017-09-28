@@ -1,5 +1,5 @@
 ## Ip geo info  
-[![](https://travis-ci.org/ezirmusitua/ipgeo.svg?branch=master)](https://travis-ci.org/ezirmusitua/ipgeo)  
+[![](https://travis-ci.org/ezirmusitua/ipgeo.svg?branch=master)](https://travis-ci.org/ezirmusitua/ipgeo)[![PyPI](https://img.shields.io/pypi/dm/getIpGeoInfo.svg)]()
 get ip address's geographic information  
 ### Features  
 1. get ip address's geographic information  
