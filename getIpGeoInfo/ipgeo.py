@@ -13,7 +13,7 @@ def json_exporter(_ip_geo):
 class IpGeo(object):
     __db_reader = None
 
-    def __init__(self, ip_address, locale=None):
+    def __init__(self, ip_address, locale='en'):
         if IpGeo.__db_reader is None:
             raise Exception('You should load geo ip city mmdb at first !')
         self._ip_address = ip_address

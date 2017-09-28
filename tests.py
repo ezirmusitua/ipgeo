@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from unittest import TestCase
+from unittest import TestCase, main as unittest_main
 
 import os
 from getIpGeoInfo.ipgeo import IpGeo
@@ -44,4 +44,4 @@ class TestIpGeo(TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest_main()
