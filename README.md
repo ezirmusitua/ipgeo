@@ -1,4 +1,5 @@
 ## Ip geo info  
+[![](https://travis-ci.org/ezirmusitua/ipgeo.svg?branch=master)](https://travis-ci.org/ezirmusitua/ipgeo)
 get ip address's geographic information  
 ### Features  
 1. get ip address's geographic information  
