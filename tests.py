@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import unittest
+from unittest import TestCase, mock
 
 import os
 from getIpGeoInfo.ipgeo import IpGeo
@@ -7,7 +7,7 @@ from getIpGeoInfo.ipgeo import IpGeo
 DB_PATH = os.path.split(os.path.realpath('__FILE__'))[0] + '/GeoLite2-City.mmdb'
 
 
-class TestIpGeo(unittest.TestCase):
+class TestIpGeo(TestCase):
     def setUp(self):
         self.ip_geo = IpGeo.open_reader(DB_PATH)(ip_address='128.101.101.101')
 
