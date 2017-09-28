@@ -15,7 +15,7 @@ def json_exporter(_ip_geo):
 class IpGeo(object):
     __db_reader = None
 
-    def __init__(self, ip_address, locale='en-US'):
+    def __init__(self, ip_address, locale=None):
         if IpGeo.__db_reader is None:
             raise Exception('You should load geo ip city mmdb at first !')
         self._ip_address = ip_address
@@ -36,6 +36,8 @@ class IpGeo(object):
 
     @property
     def country_name(self):
+        if self._locale is None:
+            return self.info['country'].name
         return self.info['country'].names[self._locale]
 
     @property
@@ -44,6 +46,8 @@ class IpGeo(object):
 
     @property
     def city_name(self):
+        if self._locale is None:
+            return self.info['city'].name
         return self.info['city'].names[self._locale]
 
     @property
@@ -55,7 +59,7 @@ class IpGeo(object):
         return self.info['postal']
 
     def location_label(self, tmpl='{country}, {city}'):
-        return tmpl.format(country=self.info['country'].names[self.locale], city=self.info['city'].names[self.locale])
+        return tmpl.format(country=self.country_name, city=self.city_name)
 
     @property
     def timezone(self):

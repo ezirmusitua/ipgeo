@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='getIpGeoInfo',
-    version='0.1.4',
+    version='0.1.5',
     description='Use geoip2 to get the ip address\'s geo info',
     packages=['getIpGeoInfo'],
     keywords=['ip', 'geoip2'],
