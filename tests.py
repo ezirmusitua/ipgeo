@@ -2,14 +2,14 @@
 from unittest import TestCase, main as unittest_main
 
 import os
-from getIpGeoInfo.ipgeo import IpGeo
+from ProxyGeoDetector.detector import Detector
 
 DB_PATH = os.path.split(os.path.realpath('__FILE__'))[0] + '/GeoLite2-City.mmdb'
 
 
-class TestIpGeo(TestCase):
+class TestProxyGeo(TestCase):
     def setUp(self):
-        self.ip_geo = IpGeo.open_reader(DB_PATH)(ip_address='128.101.101.101')
+        self.ip_geo = Detector.open_reader(DB_PATH)(ip_address='128.101.101.101')
 
     def test_position_format(self):
         position_str = self.ip_geo.position()
@@ -25,7 +25,7 @@ class TestIpGeo(TestCase):
         self.assertDictEqual(postal_with_desc, {'desc': 'must be ' + zip_code, 'code': zip_code})
 
     def test_export(self):
-        json_geo = IpGeo.export('128.101.101.101')
+        json_geo = Detector.export('128.101.101.101')
         self.assertEqual(json_geo, {
             'ip_address': '128.101.101.101',
             'location_label': 'United States, Minneapolis',
@@ -39,7 +39,7 @@ class TestIpGeo(TestCase):
         self.assertEqual(location_tmpl_label, 'United States|Minneapolis')
 
     def test_locale(self):
-        zh_cn_ip_geo = IpGeo('128.101.101.101', 'zh-CN')
+        zh_cn_ip_geo = Detector('128.101.101.101', 'zh-CN')
         self.assertEqual(zh_cn_ip_geo.country_name, '美国')
 
 

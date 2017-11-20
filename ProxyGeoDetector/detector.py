@@ -10,15 +10,15 @@ def json_exporter(_ip_geo):
     }
 
 
-class IpGeo(object):
+class Detector(object):
     __db_reader = None
 
     def __init__(self, ip_address, locale='en'):
-        if IpGeo.__db_reader is None:
+        if Detector.__db_reader is None:
             raise Exception('You should load geo ip city mmdb at first !')
         self._ip_address = ip_address
         self._locale = locale
-        self.info = IpGeo.read(ip_address)
+        self.info = Detector.read(ip_address)
 
     @property
     def ip_address(self):
